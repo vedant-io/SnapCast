@@ -1,3 +1,7 @@
+import { ImageProps } from "next/image";
+import { ChangeEvent, ReactNode } from "react";
+import { videos } from "./drizzle/schema.ts";
+
 declare interface User {
   name: string;
   email: string;
@@ -21,7 +25,7 @@ declare interface FormFieldProps {
   type?: string;
   value: string;
   onChange: (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => void;
   placeholder?: string;
   as?: "input" | "textarea" | "select";
@@ -111,14 +115,13 @@ declare interface ImageWithFallbackProps extends Omit<ImageProps, "src"> {
   src: string | null;
 }
 
-type Visibility = 'string'; //For now changed to string later change to "public \ private"
+type Visibility = "public" | "private" | string; //For now changed to string later change to "public \ private"
 
 declare interface VideoDetails {
   videoId: string;
   title: string;
   description: string;
   thumbnailUrl: string;
-  tags: string | string[];
   visibility: Visibility;
   duration?: number | null;
 }
