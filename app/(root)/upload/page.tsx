@@ -46,7 +46,7 @@ const Page = () => {
 
   useEffect(() => {
     if (video.duration != null || 0) {
-      setVideoDuration(videoDuration);
+      setVideoDuration(video.duration);
     }
   }, [video.duration]);
 
@@ -148,6 +148,7 @@ const Page = () => {
           previewUrl={video.previewUrl}
           inputRef={video.inputRef}
           onChange={video.onChange}
+          onReset={video.onReset}
           type="video"
         />
         <FileInput
@@ -158,7 +159,8 @@ const Page = () => {
           previewUrl={thumbnail.previewUrl}
           inputRef={thumbnail.inputRef}
           onChange={thumbnail.onChange}
-          type="video"
+          onReset={thumbnail.onReset}
+          type="image"
         />
 
         <FormField
