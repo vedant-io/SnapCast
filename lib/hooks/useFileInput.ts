@@ -43,5 +43,5 @@ export const useFileInput = (maxSize: number) => {
     if (inputRef.current) inputRef.current.value = "";
   };
 
-  return { file, previewUrl, duration, inputRef, onChange: handleFileChange, onReset: resetFile };
+  return { file, previewUrl, duration, inputRef, handleFileChange, onReset: resetFile };
 };

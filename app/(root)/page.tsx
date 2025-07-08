@@ -6,7 +6,7 @@ import { SearchParams } from "@/index"
 import { getAllVideos } from "@/lib/actions/video"
 
 const page = async ({searchParams}: SearchParams) => {
-  const {query,filter,page} = await searchParams;
+    const {query,filter,page} = await searchParams;
 
   const {videos, pagination} = await getAllVideos(query,filter, Number(page) || 1);
 
